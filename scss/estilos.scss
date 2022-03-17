@@ -4,24 +4,66 @@
 $col-w: white;
 $box-padd:0 .1rem;
 
+$estilos:(
+colfondo:#0e1f2f,
+collink:white,
+colsombra:gray,
+);
+
+.detallesAredes{
+  box-shadow: inset 0 0 0 0 $Color-box;
+  color: #54b3d6;
+  margin: 0 -.1rem;
+  padding: $box-padd;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  color: $col-w;
+}
+
 body{
     background-color: $bk-color;
 }
 
-
 #links {
     a {
-    box-shadow: inset 0 0 0 0 $Color-box;
-    color: #54b3d6;
-    margin: 0 -.1rem;
-    padding: $box-padd;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    color: $col-w;
+    @extend .detallesAredes;
+    margin: 0.3rem;
+    color: map-get($estilos, colfondo);
 
   
   &:hover {
-    box-shadow: inset 100px 0 0 0 #debf4d;
-    color: white;
+    box-shadow: inset 100px 0 0 0 map-get($estilos, colsombra);
+    color: map-get($estilos, collink);
   }
  }
+}
+
+.encabez{
+    div{
+      display: flex;
+      justify-content: space-between;
+    }
+}
+
+//Apliacion maps//
+
+$icoredes: (
+ wp: green,
+ ig:  violet,
+ fb: blue,
+ yt: red,
+);
+ 
+@each $red, $iccolor in $icoredes{
+  .#{$red} {
+      background-color: $iccolor;
+  }
+}
+
+@mixin fuentes($fuente,$taman){ 
+  font-family: $fuente;
+  font-size: $taman;
+}
+
+h6{
+  @include fuentes('Segoe UI',25px);
 }

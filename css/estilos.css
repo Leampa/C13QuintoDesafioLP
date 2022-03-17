@@ -1,13 +1,37 @@
-body {
-  background-color: #0e1f2f; }
-
-#links a {
+.detallesAredes, #links a {
   box-shadow: inset 0 0 0 0 #596c7b;
   color: #54b3d6;
   margin: 0 -.1rem;
   padding: 0 0.1rem;
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
   color: white; }
+
+body {
+  background-color: #0e1f2f; }
+
+#links a {
+  margin: 0.3rem;
+  color: #0e1f2f; }
   #links a:hover {
-    box-shadow: inset 100px 0 0 0 #debf4d;
+    box-shadow: inset 100px 0 0 0 gray;
     color: white; }
+
+.encabez div {
+  display: flex;
+  justify-content: space-between; }
+
+.wp {
+  background-color: green; }
+
+.ig {
+  background-color: violet; }
+
+.fb {
+  background-color: blue; }
+
+.yt {
+  background-color: red; }
+
+h6 {
+  font-family: "Segoe UI";
+  font-size: 25px; }
